@@ -1,0 +1,11 @@
+node_modules/
+.env
+artifacts/
+cache/
+coverage/
+coverage.json
+*.log.bak
+logs/*.log
+logs/.*-state.json
+logs/.windows-event-sources.json
+.DS_Store

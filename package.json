@@ -1,0 +1,29 @@
+{
+  "name": "log-integrity-monitor",
+  "version": "1.0.0",
+  "description": "Blockchain-anchored log integrity monitor for tamper detection",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "backend": "node backend/server.js",
+    "watch": "node backend/watcher.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.17.0",
+    "express": "^5.2.1",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.6.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.29.1",
+    "solc": "^0.8.20"
+  }
+}

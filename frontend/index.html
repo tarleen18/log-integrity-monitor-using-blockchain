@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log Integrity Monitor</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔗 Blockchain Log Integrity Monitor</h1>
+    <p class="subtitle">Tamper-proof log verification anchored on the blockchain</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Choose and Anchor a Log</h2>
+      <p class="hint">Choose a captured log file, then store its current integrity proof on-chain.</p>
+      <div class="row">
+        <select id="fileSelect"></select>
+        <button id="anchorBtn">Anchor on Blockchain</button>
+      </div>
+      <div id="anchorResult" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>Add an Application Log</h2>
+      <p class="hint">Capture events from a Windows application provider into a separate log file.</p>
+      <div class="row">
+        <select id="applicationProviderSelect"></select>
+        <button id="addApplicationBtn">Capture Application</button>
+      </div>
+      <div id="applicationResult" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Verify Integrity</h2>
+      <p class="hint">Re-hashes the current log file and compares it against a previously anchored root.</p>
+      <div class="row">
+        <select id="verifyFileSelect"></select>
+        <select id="anchorSelect"></select>
+        <button id="verifyBtn">Verify Now</button>
+      </div>
+      <div id="verifyResult" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. On-Chain Anchor History</h2>
+      <button id="refreshBtn">↻ Refresh</button>
+      <table id="anchorsTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Batch Label</th><th>Merkle Root</th><th>Lines</th><th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+image: node:20
+
+stages:
+  - install
+  - compile
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  script:
+    - npm ci || npm install
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 hour
+
+compile_contracts:
+  stage: compile
+  script:
+    - npx hardhat compile
+  artifacts:
+    paths:
+      - artifacts/
+    expire_in: 1 hour
+
+run_tests:
+  stage: test
+  script:
+    - npx hardhat test
